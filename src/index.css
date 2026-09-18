@@ -1,0 +1,187 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: 'Bricolage Grotesque', -apple-system, BlinkMacSystemFont, sans-serif;
+  
+  --color-skillhubb-50: #eff6ff;
+  --color-skillhubb-100: #dbeafe;
+  --color-skillhubb-200: #bfdbfe;
+  --color-skillhubb-300: #93c5fd;
+  --color-skillhubb-400: #60a5fa;
+  --color-skillhubb-500: #3b82f6;
+  --color-skillhubb-600: #2563eb;
+  --color-skillhubb-700: #1d4ed8;
+  --color-skillhubb-800: #1e40af;
+  --color-skillhubb-900: #1e3a8a;
+  --color-skillhubb-950: #0f172a;
+
+  --color-surface: #ffffff;
+  --color-surface-subtle: #f8fafc;
+  --color-surface-muted: #f1f5f9;
+  --color-border-subtle: #e2e8f0;
+  --color-border-strong: #cbd5e1;
+
+  --color-text-primary: #090d16;
+  --color-text-secondary: #475569;
+  --color-text-muted: #64748b;
+  --color-text-subtle: #94a3b8;
+}
+
+:root {
+  font-family: 'Bricolage Grotesque', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+  color-scheme: light;
+}
+
+body {
+  margin: 0;
+  background-color: #f8f9fa;
+  color: #090d16;
+  font-family: 'Bricolage Grotesque', -apple-system, BlinkMacSystemFont, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+#root {
+  min-height: 100vh;
+}
+
+/* Typography Hierarchy Utilities */
+.text-page-title {
+  font-size: clamp(1.625rem, 2.2vw, 1.875rem);
+  font-weight: 700;
+  line-height: 1.15;
+  letter-spacing: -0.025em;
+  color: #090d16;
+}
+
+.text-section-heading {
+  font-size: clamp(1.2rem, 1.6vw, 1.35rem);
+  font-weight: 650;
+  line-height: 1.25;
+  letter-spacing: -0.015em;
+  color: #090d16;
+}
+
+.text-card-title {
+  font-size: 1.0625rem;
+  font-weight: 650;
+  line-height: 1.3;
+  letter-spacing: -0.01em;
+  color: #090d16;
+}
+
+.text-body {
+  font-size: 0.90625rem;
+  font-weight: 420;
+  line-height: 1.5;
+  color: #475569;
+}
+
+.text-metadata {
+  font-size: 0.8125rem;
+  font-weight: 480;
+  line-height: 1.4;
+  color: #64748b;
+}
+
+.text-label {
+  font-size: 0.71875rem;
+  font-weight: 600;
+  line-height: 1.2;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+}
+
+/* Subtle Cards & Surfaces */
+.surface-card {
+  background-color: #ffffff;
+  border: 1px solid #e5e7eb;
+  border-radius: 0.875rem;
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.03), 0 1px 2px -1px rgba(0, 0, 0, 0.02);
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.surface-card:hover {
+  border-color: #cbd5e1;
+  box-shadow: 0 4px 12px -2px rgba(15, 23, 42, 0.06), 0 2px 4px -2px rgba(15, 23, 42, 0.03);
+}
+
+/* Interactive Controls */
+.control-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  font-weight: 550;
+  font-size: 0.875rem;
+  border-radius: 0.5rem;
+  transition: all 0.15s ease-out;
+}
+
+.control-btn:active {
+  transform: scale(0.985);
+}
+
+/* Custom Scrollbar for Dense Content */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 9999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #94a3b8;
+}
+
+/* Smooth Skeleton Animation */
+@keyframes shimmer {
+  0% {
+    opacity: 0.55;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0.55;
+  }
+}
+
+.skeleton-pulse {
+  animation: shimmer 1.7s ease-in-out infinite;
+  background-color: #f1f5f9;
+}
+
+/* Styles for rendered HTML in Job Descriptions */
+.job-description-html {
+  font-size: 0.9375rem;
+  line-height: 1.65;
+  color: #334155;
+}
+
+.job-description-html p {
+  margin-bottom: 0.875rem;
+}
+
+.job-description-html ul {
+  list-style-type: disc;
+  padding-left: 1.25rem;
+  margin-bottom: 0.875rem;
+}
+
+.job-description-html li {
+  margin-bottom: 0.375rem;
+}
+
+.job-description-html strong {
+  font-weight: 650;
+  color: #0f172a;
+}
