@@ -14,7 +14,7 @@ export const ProfileSetup: React.FC = () => {
   }, [navigate]);
 
   return (
-    <div className="min-h-screen bg-[#F8F9FA] flex flex-col antialiased font-sans">
+    <div className="min-h-screen bg-transparent flex flex-col antialiased font-sans">
       <ManualProfileForm />
     </div>
   );

@@ -45,7 +45,7 @@ export const SavedJobs: React.FC = () => {
     });
 
   return (
-    <div className="flex h-screen bg-[#F8F9FA] font-sans antialiased">
+    <div className="flex h-screen bg-transparent font-sans antialiased">
       <Sidebar />
       <div className="flex-1 flex flex-col overflow-hidden">
         <Header user={profile || undefined} />

@@ -177,7 +177,7 @@ export const Jobs: React.FC = () => {
   ].filter(Boolean) as { key: keyof FilterState; label: string }[];
 
   return (
-    <div className="flex h-screen bg-[#F8F9FA] font-sans antialiased">
+    <div className="flex h-screen bg-transparent font-sans antialiased">
       <Sidebar />
       <div className="flex-1 flex flex-col overflow-hidden">
         <Header user={profile || undefined} />
@@ -429,7 +429,7 @@ export const Jobs: React.FC = () => {
 
       {/* Mobile Filter Drawer */}
       {mobileFiltersOpen && (
-        <div className="fixed inset-0 z-50 lg:hidden flex flex-col bg-[#F8F9FA] overflow-y-auto pb-24">
+        <div className="fixed inset-0 z-50 lg:hidden flex flex-col bg-transparent overflow-y-auto pb-24">
           <div className="p-4 sm:p-6 bg-white flex-1 min-h-full">
             <JobFilters
               filters={filters}

@@ -65,7 +65,7 @@ export const ApplicationDetails: React.FC = () => {
 
   if (loading) {
     return (
-      <div className="flex h-screen bg-[#F8F9FA] font-sans antialiased">
+      <div className="flex h-screen bg-transparent font-sans antialiased">
         <Sidebar />
         <div className="flex-1 flex flex-col">
           <Header user={profile || undefined} />
@@ -79,7 +79,7 @@ export const ApplicationDetails: React.FC = () => {
 
   if (!application || !job) {
     return (
-      <div className="flex h-screen bg-[#F8F9FA] font-sans antialiased">
+      <div className="flex h-screen bg-transparent font-sans antialiased">
         <Sidebar />
         <div className="flex-1 flex flex-col">
           <Header user={profile || undefined} />
@@ -95,7 +95,7 @@ export const ApplicationDetails: React.FC = () => {
   }
 
   return (
-    <div className="flex h-screen bg-[#F8F9FA] font-sans antialiased">
+    <div className="flex h-screen bg-transparent font-sans antialiased">
       <Sidebar />
       <div className="flex-1 flex flex-col overflow-hidden">
         <Header user={profile || undefined} />

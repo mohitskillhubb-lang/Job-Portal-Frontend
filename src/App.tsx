@@ -21,21 +21,27 @@ const PrivateRoute = ({ children }: { children: React.ReactNode }) => {
 
 function App() {
   return (
-    <BrowserRouter>
-      <Routes>
-        <Route path="/" element={<Navigate to="/profile/setup" replace />} />
-        <Route path="/profile/setup" element={<ProfileSetup />} />
-        
-        <Route path="/dashboard" element={<PrivateRoute><Dashboard /></PrivateRoute>} />
-        <Route path="/profile" element={<PrivateRoute><Profile /></PrivateRoute>} />
-        <Route path="/jobs" element={<PrivateRoute><Jobs /></PrivateRoute>} />
-        <Route path="/jobs/:jobId" element={<PrivateRoute><JobDetails /></PrivateRoute>} />
-        <Route path="/recommended" element={<PrivateRoute><RecommendedJobs /></PrivateRoute>} />
-        <Route path="/saved-jobs" element={<PrivateRoute><SavedJobs /></PrivateRoute>} />
-        <Route path="/applied-jobs" element={<PrivateRoute><AppliedJobs /></PrivateRoute>} />
-        <Route path="/applications/:applicationId" element={<PrivateRoute><ApplicationDetails /></PrivateRoute>} />
-      </Routes>
-    </BrowserRouter>
+    <>
+      <div className="pointer-events-none fixed inset-0 z-[-1] overflow-hidden" aria-hidden="true">
+        <div className="bg-grid bg-grid-fade absolute inset-0"></div>
+        <div className="absolute inset-x-0 top-0 h-[600px] bg-[radial-gradient(1200px_600px_at_50%_0%,rgba(37,99,235,0.08),transparent_70%)]"></div>
+      </div>
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<Navigate to="/profile/setup" replace />} />
+          <Route path="/profile/setup" element={<ProfileSetup />} />
+          
+          <Route path="/dashboard" element={<PrivateRoute><Dashboard /></PrivateRoute>} />
+          <Route path="/profile" element={<PrivateRoute><Profile /></PrivateRoute>} />
+          <Route path="/jobs" element={<PrivateRoute><Jobs /></PrivateRoute>} />
+          <Route path="/jobs/:jobId" element={<PrivateRoute><JobDetails /></PrivateRoute>} />
+          <Route path="/recommended" element={<PrivateRoute><RecommendedJobs /></PrivateRoute>} />
+          <Route path="/saved-jobs" element={<PrivateRoute><SavedJobs /></PrivateRoute>} />
+          <Route path="/applied-jobs" element={<PrivateRoute><AppliedJobs /></PrivateRoute>} />
+          <Route path="/applications/:applicationId" element={<PrivateRoute><ApplicationDetails /></PrivateRoute>} />
+        </Routes>
+      </BrowserRouter>
+    </>
   );
 }
 
